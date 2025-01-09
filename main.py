@@ -15,7 +15,7 @@ def main():
 
     for letters in characters_sorted:
         print(f"The '{letters['character']}' character was found {letters['num']} times")
-
+    
 def get_book_text(path_to_file): # this is all good
     with open(path_to_file) as f:
         return f.read()
