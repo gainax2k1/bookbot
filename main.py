@@ -1,20 +1,3 @@
-# this was the official answer, but it doesn't work in vs code.
-# I needed to add the import os, base path, path to file lines
-#def main():
-#    book_path = "books/frankenstein.txt"
-#    text = get_book_text(book_path)
-#    print(text)
-#
-#
-#def get_book_text(path):
-#    with open(path) as f:
-#        return f.read()
-#
-#main()
-
-
-
-
 def main():
     import os # magic code to make it work
     base_path = os.path.dirname(os.path.abspath(__file__)) # magic code to make it work
