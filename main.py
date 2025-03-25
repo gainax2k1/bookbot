@@ -6,13 +6,13 @@ def main():
 
     base_path = os.path.dirname(os.path.abspath(__file__)) # magic code to make it work
     
-    #if len(sys.argv) != 2:
-    #    print("Usage: python3 main.py <path_to_book>")
-    #    sys.exit(1)
-    #path_to_file = sys.argv[1]
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    path_to_file = sys.argv[1]
 
 
-    path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
+    # old way: path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
     
     file_contents = get_book_text(path_to_file)
     word_count = wordcount(file_contents)
@@ -25,7 +25,8 @@ def main():
     #print("characts_sorted:" , characters_sorted)
 
     for letters in characters_sorted:
-        print(f"The '{letters['character']}' character was found {letters['num']} times")
+        # old way: print(f"The '{letters['character']}' character was found {letters['num']} times")
+        print(f"{letters['character']}: {letters['num']}")
     
 def get_book_text(path_to_file): # this is all good
     with open(path_to_file) as f:
