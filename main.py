@@ -1,4 +1,4 @@
-
+from stats import wordcount
 
 def main():
     import os # magic code to make it work
@@ -6,14 +6,13 @@ def main():
 
     base_path = os.path.dirname(os.path.abspath(__file__)) # magic code to make it work
     
-    if len(sys.argv) != 2:
-        print("Usage: python3 main.py <path_to_book>")
-        sys.exit(1)
+    #if len(sys.argv) != 2:
+    #    print("Usage: python3 main.py <path_to_book>")
+    #    sys.exit(1)
+    #path_to_file = sys.argv[1]
 
-    path_to_file = sys.argv[1]
 
-
-    # path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
+    path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
     
     file_contents = get_book_text(path_to_file)
     word_count = wordcount(file_contents)
@@ -32,10 +31,7 @@ def get_book_text(path_to_file): # this is all good
     with open(path_to_file) as f:
         return f.read()
 
-def wordcount(file_contents): # this is all good
-    words = file_contents.split() #splits "file_contents" into a LIST
-    number_of_words = len(words) #len returns number of items in list
-    return number_of_words
+
 
 def count_characters(file_contents): # good? same as "get chars dict"
     character_counts = {}
