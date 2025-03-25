@@ -1,7 +1,19 @@
+
+
 def main():
     import os # magic code to make it work
+    import sys # to allow sys.argv functionality
+
     base_path = os.path.dirname(os.path.abspath(__file__)) # magic code to make it work
-    path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
+    
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    path_to_file = sys.argv[1]
+
+
+    # path_to_file = os.path.join(base_path, 'books', 'frankenstein.txt')# magic code to make it work
     
     file_contents = get_book_text(path_to_file)
     word_count = wordcount(file_contents)
